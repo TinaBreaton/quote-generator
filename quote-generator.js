@@ -15,9 +15,11 @@ $(document).ready(function() {
                 
                 newColor = randomColor();
                 console.log(newColor);
-                //$("body, .quote-button").css({"background-color": newColor, "color": newColor}); works
-                $("body, button").css({"background-color": newColor, "color": newColor}); 
-         
+                //$("body, .quote-button").css({"background-color": newColor, "color": newColor}); 
+                $("body").css("background-color",  newColor); 
+                $(".quote-button").css("background-color",  newColor); 
+                $(".quote-box").css("color",  newColor);               
+                
                 document.getElementById("quote").innerHTML = '" ' + data.quote + ' "';
                 document.getElementById("author").innerHTML = "--  " + data.author;
             },
