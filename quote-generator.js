@@ -18,7 +18,9 @@ $(document).ready(function() {
                 //$("body, .quote-button").css({"background-color": newColor, "color": newColor}); 
                 $("body").css("background-color",  newColor); 
                 $(".quote-button").css("background-color",  newColor); 
-                $(".quote-box").css("color",  newColor);               
+                $(".quote-box").css("color",  newColor); 
+                $(".fa-twitter").css("background-color", newColor);    
+                   
                 
                 document.getElementById("quote").innerHTML = '" ' + data.quote + ' "';
                 document.getElementById("author").innerHTML = "--  " + data.author;
