@@ -1,11 +1,22 @@
 //The call to the API will return 1 random quote from a famous movie or person in JSON format.
 
+var quoteData = "";
+var authorData = "";
+
 getNewQuote();
 
 $(document).ready(function() {
     $(".quote-button").click(function() {
         getNewQuote();
     }) 
+
+    $("#tweet-quote").click(function() {
+
+        var initURL = "https://twitter.com/intent/tweet?hashtags=freecodecamp,quotes&text=" 
+        var urlStr = initURL.concat('"', quoteData, '"', '  -- ', authorData);
+    
+        window.open(urlStr, target = "_blank", 'width=550, height=400');
+    })
 });
 
 function getNewQuote() {
@@ -17,8 +28,8 @@ function getNewQuote() {
         type: 'GET', // The HTTP Method, can be GET POST PUT DELETE etc
         data: {}, // Additional parameters here
         dataType: 'json',
-        success: function(data) { 
-            console.log(data);        
+        success: function(resData) { 
+            console.log(resData);        
             
             newColor = randomColor();
             console.log(newColor);
@@ -29,8 +40,11 @@ function getNewQuote() {
             $(".fa-twitter").css("background-color", newColor);    
                
             
-            document.getElementById("quote").innerHTML = '" ' + data.quote + ' "';
-            document.getElementById("author").innerHTML = "--  " + data.author;
+            document.getElementById("quote").innerHTML = '" ' + resData.quote + ' "';
+            document.getElementById("author").innerHTML = "--  " + resData.author;
+
+            quoteData = resData.quote;
+            authorData = resData.author;
         },
         error: function(err) { alert(err); },
         beforeSend: function(xhr) {
