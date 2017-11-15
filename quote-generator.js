@@ -29,11 +29,8 @@ function getNewQuote() {
         data: {}, // Additional parameters here
         dataType: 'json',
         success: function(resData) { 
-            console.log(resData);        
-            
+           
             newColor = randomColor();
-            console.log(newColor);
-            //$("body, .quote-button").css({"background-color": newColor, "color": newColor}); 
             $("body").css("background-color",  newColor); 
             $(".quote-button").css("background-color",  newColor); 
             $(".quote-box").css("color",  newColor); 
@@ -61,7 +58,6 @@ function randomColor() {
     var green = Math.floor(Math.random() * 256);
     var blue = Math.floor(Math.random() * 256);
     newColor = "rgb" + "(" + red + ", " + green + ", " + blue + ")";
-    console.log(newColor);
     return (newColor);
     
 }
