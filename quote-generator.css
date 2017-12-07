@@ -53,3 +53,14 @@ h1 {
     padding: 5px 10px 10px 10px;
     float: left;
 }
+
+.credits {
+    text-align: center;
+    padding-top: 50px;
+    color: white;
+}
+
+.author, .author:link, .author:visited {
+    text-decoration: none;
+    color: white;
+}
