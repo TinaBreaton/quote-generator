@@ -3,9 +3,9 @@
 var quoteData = "";
 var authorData = "";
 
-getNewQuote();
-
 $(document).ready(function() {
+    getNewQuote();
+
     $(".quote-button").click(function() {
         getNewQuote();
     }) 
@@ -15,7 +15,7 @@ $(document).ready(function() {
         var initURL = "https://twitter.com/intent/tweet?hashtags=freecodecamp,quotes&text=" 
         var urlStr = initURL.concat('"', quoteData, '"', '  -- ', authorData);
     
-        window.open(urlStr, target = "_blank", 'width=550, height=400');
+        window.open(urlStr, "_blank", "width=550,height=400");
     })
 });
 
@@ -57,7 +57,6 @@ function randomColor() {
     var red = Math.floor(Math.random() * 256);
     var green = Math.floor(Math.random() * 256);
     var blue = Math.floor(Math.random() * 256);
-    newColor = "rgb" + "(" + red + ", " + green + ", " + blue + ")";
-    return (newColor);
+    return "rgb(" + red + ", " + green + ", " + blue + ")";
     
 }
